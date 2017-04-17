@@ -1,0 +1,4 @@
+.idea/
+.ideaHaskellLib/
+cabal.config
+TuringMachine.iml

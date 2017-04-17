@@ -1,0 +1,45 @@
+base:783:failed to parse: coerce :: Coercible * a b => a -> b
+base:841:failed to parse: class (~R#) k k a b => Coercible k (a :: k) (b :: k)
+base:3144:failed to parse: instance forall k (a :: k) (b :: k). a ~ b => a ~ b
+base:3761:failed to parse: (**, logBase) :: Floating a => a -> a -> a
+base:3762:failed to parse: (**, logBase) :: Floating a => a -> a -> a
+base:4464:failed to parse: }
+base:4476:failed to parse: }
+base:10407:failed to parse: type HasCallStack = ?callStack :: CallStack
+base:15535:failed to parse: (+, -, *) :: Num a => a -> a -> a
+base:15536:failed to parse: (+, -, *) :: Num a => a -> a -> a
+base:15537:failed to parse: (+, -, *) :: Num a => a -> a -> a
+base:15619:failed to parse: (**, logBase) :: Floating a => a -> a -> a
+base:15620:failed to parse: (**, logBase) :: Floating a => a -> a -> a
+base:18047:failed to parse: type Type = *
+base:18053:failed to parse: type * = *
+base:18056:failed to parse: type ★ = *
+base:20008:failed to parse: coerce :: Coercible * a b => a -> b
+base:20066:failed to parse: class (~R#) k k a b => Coercible k (a :: k) (b :: k)
+base:20198:failed to parse: }
+ghc:979:failed to parse: class (Typeable * e, Show e) => Exception e
+ghc:6447:failed to parse: type LImportDecl name = Located (ImportDecl name)  When in a list this may have  - 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnSemi'
+ghc:6489:failed to parse: type LIE name = Located (IE name)  When in a list this may have  - 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnComma'
+ghc:13046:failed to parse: }
+ghc:15595:failed to parse: }
+ghc:15615:failed to parse: }
+ghc:23559:failed to parse: type LHsType name = Located (HsType name)  May have 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnComma' when in a list
+ghc:23670:failed to parse: type LConDeclField name = Located (ConDeclField name)  May have 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnComma' when in a list
+ghc:24248:failed to parse: type LHsDecl id = Located (HsDecl id)  When in a list this may have  - 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnSemi'
+ghc:24278:failed to parse: type HsDeriving name = Maybe (Located [LHsSigType name])  The optional 'deriving' clause of a data declaration  @Nothing@ => not specified, @Just []@ => derive exactly what is asked  It's a 'LHsSigType' because, with Generalised Newtype Deriving, we can mention type variables that aren't bound by the date type.   e.g. data T b = ... deriving( C [a] ) should producd a derived instance for (C [a] (T b))  The payload of the Maybe is Located so that we have a place to hang the API annotations: - 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnDeriving', 'ApiAnnotation.AnnOpen','ApiAnnotation.AnnClose'
+ghc:24493:failed to parse: type LTyFamInstEqn name = Located (TyFamInstEqn name)  May have 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnSemi' when in a list
+ghc:24496:failed to parse: type HsTyPats name = HsImplicitBndrs name [LHsType name]  Type patterns (with kind and type bndrs) See Note [Family instance declaration binders]
+ghc:24664:failed to parse: type LConDecl name = Located (ConDecl name)  May have 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnSemi' when in a GADT constructor list
+ghc:24980:failed to parse: type LHsExpr id = Located (HsExpr id)  May have 'ApiAnnotation.AnnKeywordId' : 'ApiAnnotation.AnnComma' when in a list
+ghc:26844:failed to parse: type AnnPayload = Serialized  The "payload" of an annotation allows recovery of its value at a given type, and can be persisted to an interface file
+ghc-prim:219:failed to parse: type * = TYPE PtrRepLifted
+ghc-prim:222:failed to parse: type ★ = TYPE PtrRepLifted
+haskeline:175:failed to parse: class (Typeable * e, Show e) => Exception e
+hoopl:628:failed to parse: }
+hoopl:648:failed to parse: }
+hoopl:682:failed to parse: }
+primitive:56:failed to parse: }
+primitive:371:failed to parse: data ByteArray# :: (#)
+primitive:372:failed to parse: data MutableByteArray# (a :: *) :: * -> (#)
+template-haskell:1221:failed to parse: type Cxt = [Pred]  @(Eq a, Ord b)@
+template-haskell:3563:failed to parse: type Cxt = [Pred]  @(Eq a, Ord b)@

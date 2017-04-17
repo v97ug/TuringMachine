@@ -1,0 +1,16 @@
+Configuring process-extras-0.7.1...
+Building process-extras-0.7.1...
+Preprocessing library process-extras-0.7.1...
+[ 1 of 10] Compiling Utils            ( src/Utils.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Utils.o )
+[ 2 of 10] Compiling System.Process.Common ( src/System/Process/Common.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/Common.o )
+[ 3 of 10] Compiling System.Process.Text ( src/System/Process/Text.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/Text.o )
+[ 4 of 10] Compiling System.Process.Text.Builder ( src/System/Process/Text/Builder.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/Text/Builder.o )
+[ 5 of 10] Compiling System.Process.Text.Lazy ( src/System/Process/Text/Lazy.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/Text/Lazy.o )
+[ 6 of 10] Compiling System.Process.Chars ( src/System/Process/Chars.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/Chars.o )
+[ 7 of 10] Compiling System.Process.ByteString.Lazy ( src/System/Process/ByteString/Lazy.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/ByteString/Lazy.o )
+[ 8 of 10] Compiling System.Process.ByteString ( src/System/Process/ByteString.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/ByteString.o )
+[ 9 of 10] Compiling System.Process.ListLike ( src/System/Process/ListLike.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/ListLike.o )
+[10 of 10] Compiling System.Process.Run ( src/System/Process/Run.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/System/Process/Run.o )
+Installing library in
+/Users/v97ug/.stack/snapshots/x86_64-osx/lts-8.11/8.0.2/lib/x86_64-osx-ghc-8.0.2/process-extras-0.7.1-Kisq3x9MvTQ2cgWrYqtrgV
+Registering process-extras-0.7.1...
