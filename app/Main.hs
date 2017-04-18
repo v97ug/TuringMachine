@@ -1,34 +1,43 @@
 module Main where
 
-import Lib
 import Data.Maybe
-import Debug.Trace
 
 data Direction = R | L | H
+
+-- 第一リストは、注目しているリスト(ここでは、状態pの右側のテープ)
+-- 第二リストは、パンくずリスト（ここでは、状態pの左側のテープ）
+type ListZipper a = ([a], [a])
+
+goRight :: ListZipper a -> ListZipper a
+goRight (x:xs, bs) = (xs, x:bs)
+
+goLeft :: ListZipper a -> ListZipper a
+goLeft (xs, b:bs) = (b:xs, bs)
 
 main :: IO ()
 main = do
   let endB = replicate 3 "B"
-      result = manipulateLoop endB "p" (["a", "b", "a"] ++ endB)
+--      endB = repeat "B"
+      tapeChar = ["a", "b", "a"]
+      (result, accum) = manipulateLoop (tapeChar ++ endB, endB) "p" []
+  mapM_ (putStrLn . unwords) accum
+  putStrLn "--Result--"
   putStrLn $ unwords result
 
-manipulateLoop :: [String] -> String -> [String] -> [String]
-manipulateLoop beforeP p afterAll@(target:afterP) = trace ((show . unwords) (beforeP ++ [p] ++ afterAll)) $ do
-  let deltaRes = delta p target :: Maybe (String, String, Direction)
+manipulateLoop :: ListZipper String -> String -> [[String]] -> ([String], [[String]])
+manipulateLoop (x:xs, crumbs) state accum = do
+  let deltaRes = delta state x :: Maybe (String, String, Direction)
 
-  if isNothing deltaRes then beforeP ++ (p : afterAll)
+  if isNothing deltaRes then (reverse crumbs ++ (state : x : xs), accum)
   else
-    let Just (newP, replace, move) = deltaRes :: Maybe (String, String, Direction)
-        (newBeforeP, newAfterP) = calBeforePAfterP move beforeP replace afterP
-    in manipulateLoop newBeforeP newP newAfterP
+    let Just (newState, replace, direction) = deltaRes :: Maybe (String, String, Direction)
+        fixedTape = (replace : xs, crumbs) :: ListZipper String
+    in manipulateLoop (moveHead direction fixedTape) newState (accum ++ [reverse crumbs ++ (state : x : xs)])
 
-
-
-
-calBeforePAfterP :: Direction -> [String] -> String -> [String] -> ([String], [String])
-calBeforePAfterP H beforeP replace afterP = (beforeP, replace:afterP)
-calBeforePAfterP R beforeP replace afterP = (beforeP ++ [replace], afterP)
-calBeforePAfterP L beforeP replace afterP = (init beforeP, last beforeP : replace : afterP)
+moveHead :: Direction -> ListZipper String -> ListZipper String
+moveHead H zipper = zipper
+moveHead R zipper = goRight zipper
+moveHead L zipper = goLeft zipper
 
 delta :: String -> String -> Maybe (String, String, Direction)
 delta "p" "a" = Just ("p", "a", R)
