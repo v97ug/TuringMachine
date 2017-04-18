@@ -1,4 +1,5 @@
 .idea/
 .ideaHaskellLib/
+.stack-work/
 cabal.config
 TuringMachine.iml
